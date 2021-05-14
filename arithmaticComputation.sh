@@ -20,5 +20,5 @@ do
 	arithResults+=($values)
 done
 echo ${arithResults[@]}
-sorted=($(sort  <<<"${arithResults[@]}"))
-echo "sorted array in ascending order is" ${sorted[@]}
+sorted=($(printf '%s\n' "${arithResults[@]}"|sort -nr))
+echo "sorted array in descending order is" ${sorted[@]}
