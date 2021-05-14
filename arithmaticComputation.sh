@@ -1,5 +1,6 @@
 #!/bin/bash -x
 declare -A resultsOfArith
+arithResults=()
 echo "enter the three inputs"
 read a b c
 result=$(($a+$b*$c))
@@ -14,3 +15,10 @@ resultOfArith[result]=$result
 resultOfArith[result1]=$result1
 resultOfArith[result2]=$result2
 resultOfArith[result3]=$result3
+for values in ${resultOfArith[@]}
+do
+	arithResults+=($values)
+done
+echo ${arithResults[@]}
+
+
